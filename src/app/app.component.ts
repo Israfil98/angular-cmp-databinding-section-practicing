@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'cmp-databinding-section-practicing';
+  oddsArray: number[] = [];
+  evensArray: number[] = [];
+
+  onFiredInterval(firedNum: number) {
+    console.log(firedNum)
+    if (firedNum % 2 === 0) {
+      this.evensArray = [...this.evensArray, firedNum]
+    } else {
+      this.oddsArray = [...this.oddsArray, firedNum]
+    }
+  }
 }
+
